@@ -60,6 +60,11 @@ addLayer("p", {
             description: "Ok seriously stop",
             cost: new Decimal(40),
         },
+        17: {
+            title: "2nd pillow",
+            description: "Ok? 5 times dream gain",
+            cost: new Decimal(70),
+        },
     },
 })
 addLayer("t", {
@@ -73,7 +78,7 @@ addLayer("t", {
     color: "#602828",
     requires: new Decimal(690000), // Can be a function that takes requirement increases into account
     resource: "Transcendantal's", // Name of prestige currency
-    baseResource: "Sleep points", // Name of resource prestige is based on
+    baseResource: "Dreams", // Name of resource prestige is based on
     baseAmount() {return player.points}, // Get the current amount of baseResource
     type: "static", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
     exponent: 0.5, // Prestige currency exponent
