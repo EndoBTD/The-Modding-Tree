@@ -1,8 +1,8 @@
 let modInfo = {
-	name: "The ??? Tree",
+	name: "The Dream Tree",
 	id: "mymod",
-	author: "nobody",
-	pointsName: "points",
+	author: "Endo",
+	pointsName: "Dreams",
 	modFiles: ["layers.js", "tree.js"],
 
 	discordName: "",
@@ -13,8 +13,8 @@ let modInfo = {
 
 // Set your version in num and name
 let VERSION = {
-	num: "0.0",
-	name: "Literally nothing",
+	num: "1.0",
+	name: "Dreamtree",
 }
 
 let changelog = `<h1>Changelog:</h1><br>
@@ -43,6 +43,17 @@ function getPointGen() {
 		return new Decimal(0)
 
 	let gain = new Decimal(1)
+	if (hasUpgrade('p', 11)) gain = gain.times(2)
+	if (hasUpgrade('p', 12)) gain = gain.times(2)
+	if (hasUpgrade('p', 13)) gain = gain.times(1.5)
+	if (hasUpgrade('p', 14)) gain = gain.times(upgradeEffect('p', 14))
+	if (hasUpgrade('p', 15)) gain = gain.times(1.69)
+	if (hasUpgrade('p', 16)) gain = gain.times(3)
+	if (hasUpgrade('n', 11)) gain = gain.times(5)
+	if (hasUpgrade('t', 11)) gain = gain.times(69)
+
+
+
 	return gain
 }
 
