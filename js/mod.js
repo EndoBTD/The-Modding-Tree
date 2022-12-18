@@ -5,22 +5,22 @@ let modInfo = {
 	pointsName: "Dreams",
 	modFiles: ["layers.js", "tree.js"],
 
-	discordName: "",
-	discordLink: "",
+	discordName: "Dream Tree Server",
+	discordLink: "https://discord.gg/Y4Q9E2hU",
 	initialStartPoints: new Decimal (10), // Used for hard resets and new players
 	offlineLimit: 1,  // In hours
 }
 
 // Set your version in num and name
 let VERSION = {
-	num: "1.0",
+	num: "1.1",
 	name: "Dreamtree",
 }
 
 let changelog = `<h1>Changelog:</h1><br>
 	<h3>v0.0</h3><br>
 		- Added things.<br>
-		- Added stuff.`
+		- Added 1 upgrade.`
 
 let winText = `Congratulations! You have reached the end and beaten this game, but for now...`
 
@@ -49,8 +49,21 @@ function getPointGen() {
 	if (hasUpgrade('p', 14)) gain = gain.times(upgradeEffect('p', 14))
 	if (hasUpgrade('p', 15)) gain = gain.times(1.69)
 	if (hasUpgrade('p', 16)) gain = gain.times(3)
+	if (hasUpgrade('p', 17)) gain = gain.times(5)
+	if (hasUpgrade('p', 18)) gain = gain.times(5)
+	if (hasUpgrade('p', 19)) gain = gain.times(2.5)
+	if (hasUpgrade('p', 21)) gain = gain.times(2.5)
+	if (hasUpgrade('p', 22)) gain = gain.times(3.5)
+	if (hasUpgrade('p', 24)) gain = gain.times(3.5)
 	if (hasUpgrade('n', 11)) gain = gain.times(5)
+	if (hasUpgrade('n', 12)) gain = gain.times(2)	
+	if (hasUpgrade('n', 13)) gain = gain.times(1.5)
+	if (hasUpgrade('n', 14)) gain = gain.times(2)
 	if (hasUpgrade('t', 11)) gain = gain.times(69)
+	if (hasUpgrade('t', 12)) gain = gain.times(42.0)
+	if (hasUpgrade('t', 13)) gain = gain.times(upgradeEffect('t', 13))
+	if (hasUpgrade('h', 11)) gain = gain.times(5)
+
 
 
 
