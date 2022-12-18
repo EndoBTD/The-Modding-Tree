@@ -13,7 +13,7 @@ let modInfo = {
 
 // Set your version in num and name
 let VERSION = {
-	num: "1.1",
+	num: "1.2",
 	name: "Dreamtree",
 }
 
@@ -55,14 +55,20 @@ function getPointGen() {
 	if (hasUpgrade('p', 21)) gain = gain.times(2.5)
 	if (hasUpgrade('p', 22)) gain = gain.times(3.5)
 	if (hasUpgrade('p', 24)) gain = gain.times(3.5)
+	if (hasUpgrade('p', 25)) gain = gain.times(8.5)
 	if (hasUpgrade('n', 11)) gain = gain.times(5)
 	if (hasUpgrade('n', 12)) gain = gain.times(2)	
 	if (hasUpgrade('n', 13)) gain = gain.times(1.5)
 	if (hasUpgrade('n', 14)) gain = gain.times(2)
+	if (hasUpgrade('n', 15)) gain = gain.times(10)
 	if (hasUpgrade('t', 11)) gain = gain.times(69)
 	if (hasUpgrade('t', 12)) gain = gain.times(42.0)
 	if (hasUpgrade('t', 13)) gain = gain.times(upgradeEffect('t', 13))
+	if (hasUpgrade('t', 14)) gain = gain.times(upgradeEffect('t', 14))
+	if (hasUpgrade('t', 15)) gain = gain.times(upgradeEffect('t', 15))
 	if (hasUpgrade('h', 11)) gain = gain.times(5)
+	if (hasUpgrade('d', 11)) gain = gain.times(5)
+
 
 
 
