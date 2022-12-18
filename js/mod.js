@@ -5,7 +5,7 @@ let modInfo = {
 	pointsName: "Dreams",
 	modFiles: ["layers.js", "tree.js"],
 
-	discordName: "Dream Tree Server",
+	discordName: "The Dream Tree Server",
 	discordLink: "https://discord.gg/Y4Q9E2hU",
 	initialStartPoints: new Decimal (10), // Used for hard resets and new players
 	offlineLimit: 1,  // In hours
@@ -13,14 +13,14 @@ let modInfo = {
 
 // Set your version in num and name
 let VERSION = {
-	num: "1.2",
+	num: "1.4",
 	name: "Dreamtree",
 }
 
 let changelog = `<h1>Changelog:</h1><br>
 	<h3>v0.0</h3><br>
 		- Added things.<br>
-		- Added 1 upgrade.`
+		- Added 2 upgrades.`
 
 let winText = `Congratulations! You have reached the end and beaten this game, but for now...`
 

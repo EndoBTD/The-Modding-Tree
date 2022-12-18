@@ -7,7 +7,7 @@ addLayer("p", {
 		points: new Decimal(0),
     }},
     color: "#4BDC13",
-    branches: "ta n",
+    branches: "t n",
     requires: new Decimal(10), // Can be a function that takes requirement increases into account
     resource: "Sleep points", // Name of prestige currency
     baseResource: "Dreams", // Name of resource prestige is based on
@@ -19,6 +19,7 @@ addLayer("p", {
         if (hasUpgrade('p', 26)) mult = mult.times(5)
         if (hasUpgrade('d', 11)) mult = mult.times(5)
         if (hasUpgrade('p', 27)) mult = mult.times(upgradeEffect('p', 27))
+        if (hasUpgrade('p', 28)) mult = mult.times(upgradeEffect('p', 28))
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -110,6 +111,16 @@ addLayer("p", {
             cost: new Decimal(5000000000),
             effect() {
                 return player[this.layer].points.add(1).pow(0.05)
+            },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+            
+        },
+        28: {
+            title: "11th? blanket",
+            description: "sleep points multiply sleep points again",
+            cost: new Decimal(500000000000),
+            effect() {
+                return player[this.layer].points.add(1).pow(0.075)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
             
@@ -209,6 +220,7 @@ addLayer("n", {
     exponent: 0.5, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
+        if (hasUpgrade('n', 16)) mult = mult.times(2)
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -244,7 +256,12 @@ addLayer("n", {
             title: "Lava Pillow",
             description: "10 more dream gain",
             cost: new Decimal(750000),
-        }
+        },
+        16: {
+            title: "Taten Pillow",
+            description: "2x more nightmare gain",
+            cost: new Decimal(1000000),
+        },
     },
 })
 addLayer("h", {
