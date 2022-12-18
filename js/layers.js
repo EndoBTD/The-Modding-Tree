@@ -260,7 +260,7 @@ addLayer("n", {
         16: {
             title: "Taten Pillow",
             description: "2x more nightmare gain",
-            cost: new Decimal(5000000),
+            cost: new Decimal(7000000),
         },
     },
 })
